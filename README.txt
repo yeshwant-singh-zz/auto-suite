@@ -1,24 +1,31 @@
+Automation Suite(limeroad.com)
+--------------------------------------
 This is demo suit of limeroad automation through cucumber 
 I have automated few senarios of adding items to cart and verifying cart 
 to run this you need following requirements:
 
-ruby 1.9.3
-bundle
+- ruby 1.9.3
+- bundle
+- cucumber > 1.3.0
+- selenium-webdriver 2.41.0
 
 Rest all gems are mentioned in Gemfile . Just do 
-bundle install 
-it will install all the gems
+
+    bundle install 
+
+in parent folder it will install all the gems
 
 To run this suite 
-bundle exec cucumber features/*.feature
+
+    bundle exec cucumber features/*.feature
 
 or
-#For generating html report
-bundle exec cucumber features/*.feature --format html -o test_resport.html
+    #For generating html report
+    bundle exec cucumber features/*.feature --format html -o test_resport.html
 
 or
-#Running taged scenarios 
-bundle exec cucumber features/*.feature --tags @tagged_senario --format html -o test_resport.html
+    #Running taged scenarios 
+    bundle exec cucumber features/*.feature --tags @tagged_senario --format html -o test_resport.html
 
 
 
