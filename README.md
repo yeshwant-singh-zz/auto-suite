@@ -19,12 +19,12 @@ To run this suite
 
     bundle exec cucumber features/*.feature
 
-or
-    #For generating html report
+For generating html report
+    
     bundle exec cucumber features/*.feature --format html -o test_resport.html
 
-or
-    #Running taged scenarios 
+Running taged scenarios 
+    
     bundle exec cucumber features/*.feature --tags @tagged_senario --format html -o test_resport.html
 
 
