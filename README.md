@@ -1,5 +1,5 @@
-Automation Suite(limeroad.com)
---------------------------------------
+Automation Suite
+------------------------------------
 This is demo suit of limeroad automation through cucumber 
 I have automated few senarios of adding items to cart and verifying cart 
 to run this you need following requirements:
