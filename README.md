@@ -1,5 +1,5 @@
 Automation Suite
-------------------------------------
+------------------------------
 This is demo automation through cucumber 
 I have automated few senarios of adding items to cart and verifying cart 
 to run this you need following requirements:
