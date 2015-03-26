@@ -1,6 +1,6 @@
 
-Given /^I go to limeroad.com$/ do
-	@home_page = HomePage.new @browser
+Given /^I go to ([a-zA-Z_.]+)$/ do |site|
+	@home_page = HomePage.new(@browser, site)
 end
 
 And /^I (signup|signin)$/ do |action|
@@ -21,6 +21,16 @@ And /^I (signup|signin)$/ do |action|
 		@home_page.signup_heading.should == "Welcome to LimeRoad!"
 	end
 end
+
+When /^I search for television$/ do
+	@home_page.input_search "television"
+	@home_page.submit
+end
+
+Then /^I get the result$/ do
+	@home_page.title.should include "Television"
+end
+
 
 Given /^I go to sales page$/ do
 	@home_page.close_the_modal if @home_page.modal_displayed?

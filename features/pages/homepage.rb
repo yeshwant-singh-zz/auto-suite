@@ -4,16 +4,29 @@ class HomePage
 	$wait_for_element= Selenium::WebDriver::Wait.new(:timeout => 10)
 	$wait_for_error= Selenium::WebDriver::Wait.new(:timeout => 4)
 	
-	def initialize(browser)
+	def initialize(browser, site)
     	@browser = browser
-    	visit()
+    	visit(site)
     	@browser.manage.timeouts.implicit_wait = 10
-    	raise('Exception: Home page is not opening') unless @browser.title.include? "Online Shopping Women"# Clothes, Shoes, Accessories, Bags - LimeRoad.com"
+    	#raise('Exception: Home page is not opening') unless @browser.title.include? "Online Shopping Women"# Clothes, Shoes, Accessories, Bags - LimeRoad.com"
 	end
 
-	def visit
-		@browser.get("http://www.limeroad.com")
+	def visit(site)
+		@browser.get("http://#{site}")
 	end
+
+	def input_search(item)
+		@browser.find_element(:id,"fk-top-search-box").send_keys(item)
+	end
+
+	def submit
+		@browser.find_element(:css,"input.search-bar-submit").click
+	end
+
+	def title
+		@browser.title
+	end
+
 
 	def enter_your_email(email)
 		$wait_for_element.until{@browser.find_element(:css,"form#signup_form div.txtbx input").displayed?}
